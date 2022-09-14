@@ -1,12 +1,9 @@
+<div class="row m-4">
 <h1>Posts</h1>
-
-<% @posts.each do |post| %>
-
-  <%= post.title %>
-  <%= post.description %>
-  <% if user_signed_in? %>
-    <%= post.user.username %>
-  <% else %>
-    <small>Anonymous</small>
-  <% end %>
-<% end %>
+  <div class="col-6">
+    <%= render "post", posts: @posts %>
+  </div>
+  <div class="col-6">
+    <%= image_tag "posts.png", class: "posts-index" %>
+  </div>
+</div>

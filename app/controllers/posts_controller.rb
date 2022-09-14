@@ -14,7 +14,9 @@ class PostsController < ApplicationController
 
     if @post.save
       redirect_to posts_path
+      flash[:notice] = "Article was saved successfully!"
     else
+      flash.now[:alert] = "Somethings wrong with your data"
       render 'new'
     end
   end
